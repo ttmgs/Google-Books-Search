@@ -1,13 +1,18 @@
 // import logo from './logo.svg';
 import './App.css';
-
-import Card from "./components/card"
+import Header from "./components/header/head"
+import Search from "./components/search/search"
 
 
 
 function App()  {
   return (
-    <Card />
+  <div> 
+    <Header />
+    <Search />
+    
+ </div> 
+
   )
 };
 
