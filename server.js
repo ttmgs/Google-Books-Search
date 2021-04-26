@@ -1,20 +1,27 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const bodyParser = require("body-parser");
+const books = require("./routes/api/api-routes");
+
+
+
+
+// const bodyParser = require("body-parser");
 const path = require("path")
 const url = 'mongodb://127.0.0.1:27017/googlebooks'
 
+// port and enabling the express app
 const PORT = process.env.PORT || 3001;
 const app = express();
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
-
 
 
 // connecting to mongoose 
@@ -30,13 +37,18 @@ db.on('error', err => {
 })
 
 
-
-
-
-
-
-
 // Define API routes here
+app.use('/api/books', books)
+
+
+
+
+
+
+
+
+
+
 
 // Send every other request to the React app
 // Define any API routes before this runs
