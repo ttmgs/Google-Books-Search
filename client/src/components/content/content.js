@@ -5,7 +5,10 @@ import "./style.css";
 class Content extends React.Component {
   render() {
     return (
-      <div id="contentbox"></div>
+      <div id="contentbox">
+        <h5>Results</h5>
+
+      </div>
     )
   }
 }

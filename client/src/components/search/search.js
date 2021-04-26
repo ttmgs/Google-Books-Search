@@ -18,6 +18,8 @@ function activateSearch() {
 
 
 
+  
+
 
 
 export default Search;
