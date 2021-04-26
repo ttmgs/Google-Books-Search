@@ -1,21 +1,30 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const books = require("./routes/api/api-routes");
+// const bodyParser = require("body-parser")
 
+// port and enabling the express app
+const PORT = process.env.PORT || 3000;
+const app = express();
 
 
 
 // const bodyParser = require("body-parser");
-const path = require("path")
+const path = require("path");
+const bodyParser = require("body-parser");
 const url = 'mongodb://127.0.0.1:27017/googlebooks'
 
-// port and enabling the express app
-const PORT = process.env.PORT || 3001;
-const app = express();
+
+
+
+
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+
+
 
 
 // Serve up static assets (usually on heroku)
@@ -37,6 +46,10 @@ db.on('error', err => {
 })
 
 
+
+
+
+
 // Define API routes here
 app.use('/api/books', books)
 
@@ -52,13 +65,22 @@ app.use('/api/books', books)
 
 // Send every other request to the React app
 // Define any API routes before this runs
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "./client/build/index.html"));
+// });
+app.use(express.static(__dirname + '/client/public'));
+app.get('/*', function(req,res) {
+res.sendFile(path.join(__dirname + '/client/public/index.html'));
+
 });
 
 
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooksdb", { useNewUrlParser: true });
+
+
+
+
+// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooksdb", { useNewUrlParser: true });
 
 
 
