@@ -1,6 +1,8 @@
 {
   "scripts": {
-    "start": "node server.js"
+    "start": "nodemon server.js && livereload",
+    "live": "nodemon server.js" 
+
   },
   "name": "google-books-search",
   "description": "",

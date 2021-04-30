@@ -1,6 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const books = require("./routes/api/api-routes");
+const books = require("./routes/api-routes");
 // const bodyParser = require("body-parser")
 
 // port and enabling the express app
@@ -12,18 +12,8 @@ const app = express();
 // const bodyParser = require("body-parser");
 const path = require("path");
 const bodyParser = require("body-parser");
-const url = 'mongodb://127.0.0.1:27017/googlebooks'
 
 
-
-const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://ttmgs:Windsor2000!!@cluster0.o8fsr.mongodb.net/googlebooks?retryWrites=true&w=majority";
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-client.connect(err => {
-  const collection = client.db("test").collection("devices");
-  // perform actions on the collection object
-  client.close();
-});
 
 
 // Define middleware here
@@ -41,7 +31,7 @@ if (process.env.NODE_ENV === "production") {
 
 
 // connecting to mongoose 
-
+const url = 'mongodb://127.0.0.1:27017/googlebooks'
 mongoose.connect(url, { useNewUrlParser: true })
 const db = mongoose.connection
 db.once('open', _ => {
