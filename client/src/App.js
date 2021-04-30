@@ -4,6 +4,7 @@ import Header from "./components/header/head"
 import Search from "./components/search/search"
 import Content from "./components/content/content"
 import React from 'react';
+import Book from "../../models/Book";
 
 
 
@@ -15,26 +16,6 @@ function App()  {
     <Content />
  </div> 
   )}
-// class ShowContent extends React.Component {
-  
-//   state = {
-//     title: '',
-//     author: '',
-//     synopsis: ''
-//   }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 export default App;

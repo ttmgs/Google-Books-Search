@@ -3,9 +3,9 @@ const Schema = mongoose.Schema;
 // let BookModel = require("books");
 
 const BooksSchema = new Schema({
+
  title: {
    type: String,
-   required: true
  },
 
  author: {
@@ -14,28 +14,9 @@ const BooksSchema = new Schema({
 
  synopsis: {
    type: String,
-
  }
 
-
-
-
- 
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -44,25 +25,9 @@ const Books = mongoose.model("googlebooks", BooksSchema);
 module.exports = Books;
 
 
-
-
-BooksSchema.methods.getTitle = function() {
-  console.log(this.title[0])
-}
-
-
-
-
-
-
-
-
-
-
-
 Books
   .find({
-    _id: "6085b48c14a2039a75d1da63"  // search query
+    _id: "6085b83414a2039a75d1da6c"  // search query
   })
   .then(doc => {
     console.log(doc)
@@ -87,8 +52,3 @@ Books
 
 
 
-
-
-// const Books = mongoose.model("Books", BooksSchema);
-
-// module.exports = Books;
