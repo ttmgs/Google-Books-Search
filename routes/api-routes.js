@@ -8,8 +8,7 @@ const Book = require("../models/Book")
 
 // GET request to get all books
 router.get('/', function(req, res) {
-   Book.find()
-   .then(books => res.json(books))
+  res.send({type: 'GET'})
 })
 
 
