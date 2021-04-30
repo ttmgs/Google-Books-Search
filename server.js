@@ -1,6 +1,5 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const books = require("./routes/api-routes");
 // const bodyParser = require("body-parser")
 
 // port and enabling the express app
@@ -24,8 +23,8 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Define API routes here
-app.use('/api/books', books)
-app.use('/api/books/:id', books)
+app.use('/api/books', require('./routes/api-routes'))
+app.use('/api/books/:id', require('./routes/api-routes'))
 
 // Send every other request to the React app
 // Define any API routes before this runs
@@ -39,7 +38,7 @@ res.sendFile(path.join(__dirname + '/client/public/index.html'));
 });
 
 // connecting to mongoose 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooksdb", { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooks", { useNewUrlParser: true });
 
 
 // port
