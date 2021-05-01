@@ -4,17 +4,25 @@ import Header from "./components/header/head"
 import Search from "./components/search/search"
 import Content from "./components/content/content"
 import React from 'react';
+import Books from "../../models/Book";
 
 
 
-function App()  {
-  return (
+function showBook() {
+  
+}
+
+
+
+class App extends React.Component()  {
+  render () {
+
+    return(
   <div> 
-    <Header />
-    <Search />
-    <Content />
+  
+    <Content title='' author='' synopsis='' />
  </div> 
-  )}
+    )}}
 
 
 export default App;

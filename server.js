@@ -1,5 +1,4 @@
 const express = require("express");
-const mongoose = require("mongoose");
 const path = require("path");
 const connectDB = require("./config/db")
 
@@ -24,7 +23,7 @@ connectDB()
 // json parsing
 app.use(express.json());
 // Define middleware here
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 
 
 // Define API routes here

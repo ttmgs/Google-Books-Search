@@ -1,16 +1,13 @@
 import React from "react";
-import "./style.css";
 
-function Header() {
+function header() {
   return (
+    <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+      <a className="navbar-brand" href="/">
+          GOOGLE BOOKS
+      </a>
+    </nav>
+  );
+}
 
-<header>
-
-
-  <h1>Google Books Search</h1>
-<h4>Search for and save books of interest</h4>   
-
-</header>    
-  )};
-
-export default Header;
+export default header;

@@ -10,7 +10,7 @@ const Book = require("../models/Book")
 
 
 router.get('/', function(req, res) {
-  res.send({type: 'GET'})
+  res.send({Book})
 })
 
 
