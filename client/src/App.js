@@ -4,7 +4,6 @@ import Header from "./components/header/head"
 import Search from "./components/search/search"
 import Content from "./components/content/content"
 import React from 'react';
-import Book from "../../models/Book";
 
 
 

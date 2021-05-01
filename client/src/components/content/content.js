@@ -1,13 +1,13 @@
 import React from "react";
 import "./style.css";
-import Book from "../../../../models/Book";
+// import Book from "../../../../models/Book";
 
 
 function Content(props) {
   // render() {
     return (
       <div id="contentbox">
-        <h5>{Book.props}</h5>
+        <h5></h5>
 
       </div>
     )
