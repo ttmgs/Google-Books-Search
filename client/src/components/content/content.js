@@ -7,23 +7,22 @@ function Content() {
   // render() {
     return (
       <div>
-        <h5>BOOKS</h5>
+        <div id="content"><h5>BOOKS</h5></div>
+        
+
+        <div> {} </div>
+       <div>{}</div>
+
+
+
 
       </div>
-    )
-    // }
-}
-
-
-
-// function ShowContent() {
-//   document.
-// }
 
 
 
 
 
+    )};
 
 
 
