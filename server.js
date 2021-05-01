@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
+const connectDB = require("./config/db")
 
 // const bodyParser = require("body-parser")
 
@@ -20,7 +21,8 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // connecting to mongoose 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooks", { useNewUrlParser: true });
+// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooks", { useNewUrlParser: true });
+connectDB()
 
 
 // json parsing

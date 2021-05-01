@@ -28,31 +28,18 @@ const Books = mongoose.model("googlebooks", BooksSchema);
 module.exports = Books;
 
 
-// Books
-//   .find({
-//     _id: "6085b48c14a2039a75d1da63",  
-//   })
-//   .then(doc => {
-//     console.log(doc)
-//   })
-//   .catch(err => {
-//     console.error(err)
-//   })
+Books
+  .find({ 
+    _id: "6085b48c14a2039a75d1da63"
+  })
+  .then(doc => {
+    console.log(doc)
+  })
+  .catch(err => {
+    console.error(err)
+  });
 
 
-  const User = mongoose.model('BooksSchema', Schema({
-    title: String,
-    author: String
-  }));
+
+
   
-  // Empty `filter` means "match all documents"
-  const filter = {};
-  const all =  User.find(filter);
-
-
-
-
-
-
-
-
