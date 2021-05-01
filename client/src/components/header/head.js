@@ -1,4 +1,7 @@
 import React from "react";
+import "./style.css";
+
+// this file will be used for both pages as a redirect to the home screen
 
 function header() {
   return (

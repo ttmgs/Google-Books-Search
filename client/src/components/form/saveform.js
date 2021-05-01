@@ -1,6 +1,6 @@
 import React from "react";
 
-// this file exports the title, saved books content area
+// this file exports the title
 
 
 export function Title() {
