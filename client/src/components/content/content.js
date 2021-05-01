@@ -3,11 +3,11 @@ import "./style.css";
 // import Book from "../../../../models/Book";
 
 
-function Content(props) {
+function Content() {
   // render() {
     return (
-      <div id="contentbox">
-        <h5></h5>
+      <div>
+        <h5>BOOKS</h5>
 
       </div>
     )

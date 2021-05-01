@@ -10,11 +10,6 @@ const PORT = process.env.PORT || 8080;
 const app = express();
 
 
-
-// Define middleware here
-app.use(express.urlencoded({ extended: true }));
-
-
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
@@ -22,11 +17,14 @@ if (process.env.NODE_ENV === "production") {
 
 // connecting to mongoose 
 // mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooks", { useNewUrlParser: true });
+
 connectDB()
 
 
 // json parsing
 app.use(express.json());
+// Define middleware here
+app.use(express.urlencoded({ extended: false }));
 
 
 // Define API routes here
