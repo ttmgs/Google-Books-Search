@@ -3,7 +3,7 @@ import "./style.css";
 
 // this file will be used for both pages as a redirect to the home screen
 
-function header() {
+function Header() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
       <a className="navbar-brand" href="/">
@@ -13,4 +13,4 @@ function header() {
   );
 }
 
-export default header;
+export default Header;
