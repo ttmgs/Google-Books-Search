@@ -12,7 +12,8 @@ import { SaveBtn, AllSaved } from "../buttons/saveBtns";
 function Home() {
    
     // Setting our component's initial state
-    const [books, setBooks] = useState({
+    const [books, setBooks] = useState([])
+    const [formObject, setFormObject] = useState({
       title: "",
       author: "",
       synopsis: "",
@@ -45,21 +46,36 @@ function Home() {
   }
 
     // Handles updating component state when the user types into the input field
+  function handleInputChange(event) {
+    const { name, value } = event.target;
+    setFormObject({...formObject, [name]: value})
+  };
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+  // When the form is submitted, use the API.saveBook method to save the book data
+  // Then reload books from the database
+  function handleFormSubmit(event) {
+    event.preventDefault();
+    if (formObject.title && formObject.author) {
+      API.saveBook({
+        title: formObject.title,
+        author: formObject.author,
+        synopsis: formObject.synopsis
+      })
+       .then(() => setFormObject({
+         title: "",
+         author: "",
+         synopsis: ""
+       }))
+       .then(() => setFormObject({
+         title: "",
+         author: "",
+         synopsis: ""     
+       }))
+       .then(() => loadBooks())
+       .catch(err => console.log(err));
+    }
+  };
 
 
     return(
@@ -71,9 +87,22 @@ function Home() {
             </Jumbotron>
             <form>
               <Input
-              onChange={} name="title" placeholder="Title (required)" value={}
+              onChange={handleInputChange} name="title" placeholder="Title (required)" value={formObject.title}
               />
+              <Input
+                 onChange={handleInputChange} name="author" placeholder="Author (required)" value={formObject.author}     
+              />
+              <TextArea
+                   onChange={handleInputChange} name="synopsis" placeholder="Synopsis (Optional)" value={formObject.synopsis}
+                   />
               
+              
+
+
+
+
+
+
             </form>
 
 
